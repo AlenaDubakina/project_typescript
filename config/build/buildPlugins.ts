@@ -9,10 +9,10 @@ export function buildPlugins({
     isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
-        new webpack.ProgressPlugin(),
         new HtmlWebpackPlugin({
             template: paths.html,
         }),
+        new webpack.ProgressPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
             chunkFilename: 'css/[id].[contenthash:8].css',
